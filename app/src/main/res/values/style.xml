@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MPView" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowAnimationStyle">@style/bottom2top</item>
+    </style>
+
+    <style name="bottom2top" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/in_from_bottom</item>
+
+        <item name="android:activityOpenExitAnimation">@anim/out_to_bottom</item>
+
+        <item name="android:activityCloseEnterAnimation">@anim/in_from_bottom_close</item>
+
+        <item name="android:activityCloseExitAnimation">@anim/out_to_bottom_close</item>
+
+        <item name="android:taskOpenEnterAnimation">@anim/in_from_bottom</item>
+
+        <item name="android:taskOpenExitAnimation">@anim/out_to_bottom</item>
+
+        <item name="android:taskCloseEnterAnimation">@anim/in_from_bottom_close</item>
+
+        <item name="android:taskCloseExitAnimation">@anim/out_to_bottom_close</item>
+    </style>
+</resources>

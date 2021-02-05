@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="main">#FF2196F3</color>
+    <color name="main_deep">#FF1874BC</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="teal">#FF03DAC5</color>
+    <color name="teal_deep">#FF018786</color>
+    <color name="black">#FF000000</color>
+</resources>
