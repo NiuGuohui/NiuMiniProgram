@@ -1,2 +1,2 @@
 # NiuMiniProgram-Android
-A MiniProgram implements
+A mini program implemented by Android

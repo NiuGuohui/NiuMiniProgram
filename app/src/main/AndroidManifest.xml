@@ -22,7 +22,6 @@
             android:process=":mpProcess"
             android:theme="@style/MPView"
             android:allowTaskReparenting="true"
-            android:fitsSystemWindows="true"
             android:taskAffinity="com.example.niuminiprogram.mp"/>
     </application>
 

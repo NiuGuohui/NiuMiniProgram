@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import com.example.niuminiprogram.utils.NiuLog
 import kotlin.system.exitProcess
 
@@ -27,6 +26,8 @@ class MiniProgramActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mini_program)
         mpPackageName = intent.getStringExtra("package") ?: "";
+
+        NiuLog.d("Load MiniProgram：${mpPackageName}")
     }
 
     override fun onBackPressed() {
@@ -34,35 +35,33 @@ class MiniProgramActivity : AppCompatActivity() {
         NiuLog.d("Hide MiniProgram：${mpPackageName}")
     }
 
-    override fun onStart() {
-        super.onStart()
-    }
-
     override fun onResume() {
         super.onResume()
-        NiuLog.d("Hide MiniProgram：${mpPackageName}")
+        NiuLog.d("Show MiniProgram：${mpPackageName}")
     }
 
     override fun onPause() {
         super.onPause()
+        NiuLog.d("Pause MiniProgram：${mpPackageName}")
     }
 
     override fun onStop() {
         super.onStop()
+        NiuLog.d("Stop MiniProgram：${mpPackageName}")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("Niu", "Mp process is destroy")
+        NiuLog.d("Mp process is destroy")
         exitProcess(0);
     }
 
     private fun close() {
-        Log.d("Niu", "The Mp:${mpPackageName} will be close")
+        NiuLog.d("The Mp:${mpPackageName} will be close")
         finish()
     }
 
-    private fun menu(){
+    private fun menu() {
 
     }
 }

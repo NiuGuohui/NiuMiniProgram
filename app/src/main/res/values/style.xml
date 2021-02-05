@@ -3,6 +3,8 @@
 
     <style name="MPView" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowAnimationStyle">@style/bottom2top</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
     <style name="bottom2top" parent="@android:style/Animation.Activity">
