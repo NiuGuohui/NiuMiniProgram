@@ -2,17 +2,12 @@
 <resources>
     <color name="main">#FF2196F3</color>
     <color name="main_deep">#FF1874BC</color>
-    <color name="teal">#FF03DAC5</color>
-    <color name="teal_deep">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="gray">#FFA0A0A0</color>
     <color name="white_gray">#FFE0E0E0</color>
     <color name="white">#FFFFFFFF</color>
     <color name="text_primary">@color/black</color>
     <color name="text_secondary">#FF333333</color>
-    <color name="text_unimportant">#FF666666</color>
-    <color name="text_neglect">#FFAAAAAA</color>
-    <color name="capsule_black_tran">#57000000</color>
-    <color name="capsule_white_tran">#57FFFFFF</color>
-
+    <color name="text_third">#FF666666</color>
+    <color name="main_light">#68B4F1</color>
 </resources>

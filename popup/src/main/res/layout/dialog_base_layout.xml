@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="15dp"
+    android:background="@drawable/dialog_bg"
+    android:paddingHorizontal="10dp">
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingHorizontal="20dp"
+        android:text="提示"
+        android:textAlignment="center"
+        android:textColor="@color/text_primary"
+        android:textSize="22sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.aolig.popup.widget.AutoMaxHeightScrollView
+        android:id="@+id/dialog_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="14dp"
+        android:fadingEdge="none"
+        android:fadingEdgeLength="0dp"
+        android:requiresFadingEdge="none"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="@+id/dialog_title"
+        app:layout_constraintStart_toStartOf="@+id/dialog_title"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_title" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_content">
+
+        <Button
+            android:id="@+id/cancel_button"
+            style="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/permission_dialog_btn_margin"
+            android:layout_marginRight="@dimen/permission_dialog_btn_margin"
+            android:layout_marginBottom="@dimen/permission_dialog_btn_margin"
+            android:layout_weight="1"
+            android:background="@drawable/dialog_cancel_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingTop="@dimen/permission_dialog_btn_padding"
+            android:paddingBottom="@dimen/permission_dialog_btn_padding"
+            android:text="取消"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/permission_dialog_btn_text_size"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/confirm_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/permission_dialog_btn_margin"
+            android:layout_marginRight="@dimen/permission_dialog_btn_margin"
+            android:layout_marginBottom="@dimen/permission_dialog_btn_margin"
+            android:layout_weight="1"
+            android:background="@drawable/dialog_confirm_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingTop="@dimen/permission_dialog_btn_padding"
+            android:paddingBottom="@dimen/permission_dialog_btn_padding"
+            android:text="确认"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

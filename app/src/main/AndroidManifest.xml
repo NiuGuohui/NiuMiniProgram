@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.niuminiprogram">
+    package="com.aolig.miniprogram">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -10,7 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NiuMiniProgram">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.aolig.miniprogram.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,11 +25,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MiniProgramActivity"
-            android:process=":mpProcess"
+            android:name="com.aolig.miniprogram.MiniProgramActivity"
+            android:allowTaskReparenting="false"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.aolig.miniprogram.mp"
             android:theme="@style/MPView"
-            android:allowTaskReparenting="true"
-            android:taskAffinity="com.example.niuminiprogram.mp"/>
+            android:process="com.aolig.miniprogram.mp"/>
+
+        <activity-alias
+            android:name=".MiniProgramActivity"
+            android:icon="@mipmap/mp_icon"
+            android:label="NiuGuohui"
+            android:targetActivity="com.aolig.miniprogram.MiniProgramActivity" />
     </application>
 
 </manifest>

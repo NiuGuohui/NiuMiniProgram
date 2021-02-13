@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="nav_bar_height">48dp</dimen>
+    <dimen name="capsule_width">81dp</dimen>
+    <dimen name="capsule_height">32dp</dimen>
+</resources>

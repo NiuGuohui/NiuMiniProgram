@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">NiuMiniProgram</string>
-    <string name="open_mp">Open MiniProgram</string>
+    <string name="app_name">MiniProgram</string>
+    <string name="get_permission">1.申请权限</string>
+    <string name="open_mp">2.打开一个小程序</string>
 </resources>

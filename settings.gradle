@@ -1,2 +1,3 @@
+include ':popup'
 include ':app'
 rootProject.name = "NiuMiniProgram"

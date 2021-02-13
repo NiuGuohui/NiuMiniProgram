@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/main"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/custom_nav_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <LinearLayout
+        android:id="@+id/custom_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_bar_height"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/custom_nav_left"
+            android:layout_width="15dp"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/navbar_icon"
+            android:layout_width="@dimen/nav_bar_height"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:contentDescription="返回/主页"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/navbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</LinearLayout>
