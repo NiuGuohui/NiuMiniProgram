@@ -3,22 +3,20 @@ package com.aolig.miniprogram
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.ViewGroup.LayoutParams
 import androidx.appcompat.app.AppCompatActivity
-import com.aolig.miniprogram.utils.AoligLog
+import com.aolig.miniprogram.helper.AoligLog
 import com.aolig.miniprogram.widget.Capsule
-import com.aolig.miniprogram.widget.MiniProgramPage
 import kotlinx.android.synthetic.main.activity_mini_program.*
-import java.lang.Thread.sleep
 import kotlin.system.exitProcess
 
 class MiniProgramActivity : AppCompatActivity() {
-    // miniprogram's package name
+    // 小程序 package name
     private lateinit var mpPackageName: String;
-    private var exitThread: Thread? = null
     private lateinit var capsuleView: Capsule
 
-    // start this Activity
+    lateinit var pageManager: PageManager
+
+    // 启动这个Activity
     companion object {
         fun start(context: Context, mpPackageName: String) {
             val i = Intent(context, MiniProgramActivity::class.java)
@@ -35,26 +33,26 @@ class MiniProgramActivity : AppCompatActivity() {
         mpPackageName = intent.getStringExtra("package") ?: "";
         AoligLog.d("Load MiniProgram：${mpPackageName}")
         capsuleView = capsule
-        // set capsule's event
-        capsuleView.setOnMenuClickListener { }
+        // 设置capsule的菜单按钮点击事件
+        capsuleView.setOnMenuClickListener { menu() }
+        // 设置capsule的关闭按钮点击事件
         capsuleView.setOnCloseClickListener { close() }
+        // 页面管理器
+        pageManager = PageManager(this, webview_container, capsuleView)
 
-        pushNewWebView("https://www.baidu.com")
-    }
-
-    fun pushNewWebView(href: String) {
-        val page = MiniProgramPage(this, href, capsuleView)
-
-        webview_container.addView(page, LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
+        pageManager.pushNewPage("file:///android_asset/miniprogram/test/index.html")
     }
 
     override fun onBackPressed() {
-        close()
+        if (pageManager.getStackLength() == 1) {
+            moveTaskToBack(false)
+        } else {
+            pageManager.exitLastPage()
+        }
     }
 
     override fun onResume() {
         super.onResume()
-        exitThread = null
         AoligLog.d("Show MiniProgram：${mpPackageName}")
     }
 
@@ -74,17 +72,12 @@ class MiniProgramActivity : AppCompatActivity() {
     }
 
     fun close() {
-        moveTaskToBack(false)
-        AoligLog.d("The Mp:${mpPackageName} will be close after 10s")
-        // wait 10s to destroy program
-        exitThread = Thread {
-            sleep(10000)
-            if (exitThread != null) {
-                finish()
-                AoligLog.d("The Mp:${mpPackageName} is close")
-                exitProcess(0)
-            }
-        }
-        exitThread!!.start()
+        finish()
+        AoligLog.d("The Mp:${mpPackageName} is close")
+        exitProcess(0)
+    }
+
+    fun menu() {
+
     }
 }

@@ -1,4 +1,4 @@
-package com.aolig.miniprogram.utils
+package com.aolig.miniprogram.helper
 
 import android.util.Log
 
